@@ -25,7 +25,7 @@ From [Qiagen Digital Insights:](https://resources.qiagenbioinformatics.com/manua
 
 Then, a [bioinformatics resource from the University of Bologna](http://www.biocomp.unibo.it/casadio/LMBIOTEC/evalue) takes a less detailed approach, simply stating that the typical threshold for a good e−value from a BLAST search is e−5=(10−5) or lower.
 
-Meanwhile, [(Metagenomics.Wiki)](https://www.metagenomics.wiki/tools/blast/evalue) indicates the following about e-values: 
+Meanwhile, [Metagenomics.Wiki](https://www.metagenomics.wiki/tools/blast/evalue) indicates the following about e-values: 
 - e-value = 1e-50: small e-value, low number of hits, but of high quality.  Blast hits with an e-value smaller than 1e-50 includes database matches of very high quality.
 - e-value = 1e-2: Blast hits with e-value smaller than 0.01 can still be considered as good hit for homology matches.
 - e-value = 10: large e-value, many hits, partly of low quality.  E-value smaller than 10 will include hits that cannot be considered as significant, but may give an idea of potential relations.
@@ -46,6 +46,6 @@ Therefore, as an answer to the bonus question, I would say that I would perform 
 
 1. Hieranoid: This is a graph-based method that uses hierarchical approaches.  The benefits of this method include scalability and accuracy.  [("New Tools in Orthology Analysis: A Brief Review of Promising Perspectives")](https://www.frontiersin.org/articles/10.3389/fgene.2017.00165/full#h3)The creators of the software write the following:
  *"Hieranoid performs pairwise orthology analysis using InParanoid at each node in a guide tree as it progresses from its leaves to the root. This concept reduces the total runtime complexity from a quadratic to a linear function of the number of species. The tree hierarchy provides a natural structure in multi-species ortholog groups, and the aggregation of multiple sequences allows for multiple alignment similarity searching techniques, which can yield more accurate ortholog groups."*
-[Schreiber, F., and Sonnhammer, E. L. (2013)](https://www.sciencedirect.com/science/article/pii/S0022283613001204). 
+[(Schreiber, F., and Sonnhammer, E. L., 2013)](https://www.sciencedirect.com/science/article/pii/S0022283613001204). 
 2. OrthAgogue: OrthAgogue is an algorithm that takes as input the best high-scoring pairs in BLAST output to then continue searching for orthologous groups.  The authors of "New Tools in Orthology Analysis" highlight that orthAgogue is particularly convenient when working on large amounts of data with computers of limited capabilities.  The paper with the original findings can be found [here](https://academic.oup.com/bioinformatics/article/30/5/734/245731). 
-3. PorthoMCL:
+3. PorthoMCL: PorthoMCL is an orthology predictor.  After an "all-against-all" and an "individual-against-all" searches are performed in BLAST, the algorithm finds the RBH between the two genomes and calculates the normalized sccore.  Then, PorthoMCL finds the within genomes RBH and normalizes the score with the average score of all paralog pairs that have orthologs in other genomes.  Finally, the output is a sequence similarlity graph that the MCL program then cuts to predict orthologous and paralogous groups [(Tabari and Su, 2017)](https://bdataanalytics.biomedcentral.com/articles/10.1186/s41044-016-0019-8).
