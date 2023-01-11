@@ -2,7 +2,7 @@ This folder contains information pertaining to Assignment 4, "Use of BLAST to Di
 
 The contents of this directory are as follows:
 
-- Instructions.pdf (a file containing the instructions)
+- Exercise 4 Instructions.pdf (a file containing the instructions)
 - Arabidopsis.fa and Spombe.fa (Fasta files required for the program to run)
 - Assignment4.rb (the Ruby file with the code)
 - report.txt (a report containing the pairs of orthologue candidates)
