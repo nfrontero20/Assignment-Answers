@@ -61,6 +61,7 @@ def blast_best_hit(prog,db,query)
     
     evalue = report.hits[0].evalue.to_f
     
+    # Specify that coverage must be greater than or equal to the coverage_threshold and that the evalue must be less than or equal to the evalue threshold
     if coverage >= coverage_threshold && evalue <= evalue_threshold
       return report.hits[0].definition.split("|")[0].strip
     end
