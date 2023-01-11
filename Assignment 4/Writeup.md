@@ -28,11 +28,11 @@ Meanwhile, [Metagenomics.Wiki](https://www.metagenomics.wiki/tools/blast/evalue)
 - e-value = 1e-2: Blast hits with e-value smaller than 0.01 can still be considered as good hit for homology matches.
 - e-value = 10: large e-value, many hits, partly of low quality.  E-value smaller than 10 will include hits that cannot be considered as significant, but may give an idea of potential relations.
 
-I decided to use an **e-value of 1e-6** (meaning, e-value less than 1e-6).  I figured that I could stand to be a little more aggressive than what the University of Bologna webpage suggested, but not as intense as what Qiagen Digital Insights was proposing counted as a "good" e-value.  Also, I reasoned that choosing 1e-6 fell in line with what Metagenomics.Wiki was looking for, still while not being too aggressive.
+I decided to use an **e-value of 1e-6** (meaning, e-value less than or equal to 1e-6).  I figured that I could stand to be a little more aggressive than what the University of Bologna webpage suggested, but not as intense as what Qiagen Digital Insights was proposing counted as a "good" e-value.  Also, I reasoned that choosing 1e-6 fell in line with what Metagenomics.Wiki was looking for, still while not being too aggressive.
 
 The other parameter I incorporated into the code was the **query coverage**.  Coverage is the percentage of the query sequence length that is included in the alignment [(Newell et al., 2013)](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3867762/).  Oftentimes what can happen when running a BLAST search is that the sequences returned will only align with part of a queried sequence.  As a result, the greater the query coverage, the lower the e-value and the better the match [(Newell et al., 2013)](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3867762/). 
 
-I chose to follow the example set by Moreno-Hagelsieb et al. in their very helpful article titled ["Choosing BLAST options for better detection of orthologs as reciprocal best hits"](https://academic.oup.com/bioinformatics/article/24/3/319/252715) and **used a coverage of 50%** (meaning, coverage greater than 50%).
+I chose to follow the example set by Moreno-Hagelsieb et al. in their very helpful article titled ["Choosing BLAST options for better detection of orthologs as reciprocal best hits"](https://academic.oup.com/bioinformatics/article/24/3/319/252715) and **used a coverage of 50%** (meaning, coverage greater than or equal to 50%).
 
 ## Bonus Question 
 
