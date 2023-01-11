@@ -12,17 +12,28 @@ In this investigation, we use BioRuby to find orthologue pairs between **Arabido
 
 [()]()
 
-The **e-value**, which stands for "expect value", measures the number of hits one can expect to see by chance when searching a database of a particular size [(NCBI)](https://blast.ncbi.nlm.nih.gov/Blast.cgi?CMD=Web&PAGE_TYPE=BlastDocs&DOC_TYPE=FAQ).  In this way, the e-value serves as a measure of significance and may remind you of the commonly heard of p-value.  
+The **e-value**, which stands for "expect value", measures the number of hits one can expect to see by chance when searching a database of a particular size [(NCBI)](https://blast.ncbi.nlm.nih.gov/Blast.cgi?CMD=Web&PAGE_TYPE=BlastDocs&DOC_TYPE=FAQ).  In this way, the e-value serves as a measure of significance and may remind you of the commonly heard of p-value.  Note that the e-value depends on the length of the database [(Ricardo Avila Bioinformatics Website)](https://ravilabio.info/notes/bioinformatics/e-value-bitscore.html).
 
-A basic internet search (not of academic papers) reveals the following about e-values: 
-- E-value < 10e-100 Identical sequences. You will get long alignments across the entire query and hit sequence.
-- 10e-100 < E-value < 10e-50 Almost identical sequences. A long stretch of the query protein is matched to the database.
-- 10e-50 < E-value < 10e-10 Closely related sequences, could be a domain match or similar.
-- 10e-10 < E-value < 1 Could be a true homologue but it is a gray area.
-- E-value > 1 Proteins are most likely not related
-- E-value > 10 Hits are most likely junk unless the query sequence is very short.
+There is no consensus on the e-value to choose, especially given that it depends on your goals and on the size of the database.  Nevertheless, here are some opinions and philosophies found on the internet.
 
-To decide on "sensible" BLAST parameters, do a bit of online reading - when you have decided what parameters to use, please cite the paper or website that provided the information.
+From [Qiagen Digital Insights:](https://resources.qiagenbioinformatics.com/manuals/clcgenomicsworkbench/650/_E_value.html)
+- e-value < 10e-100 Identical sequences. You will get long alignments across the entire query and hit sequence.
+- 10e-100 < e-value < 10e-50: Almost identical sequences. A long stretch of the query protein is matched to the database.
+- 10e-50 < e-value < 10e-10: Closely related sequences, could be a domain match or similar.
+- 10e-10 < e-value < 1: Could be a true homologue but it is a gray area.
+- e-value > 1: Proteins are most likely not related
+- e-value > 10: Hits are most likely junk unless the query sequence is very short.
+
+Then, a [bioinformatics resource from the University of Bologna](http://www.biocomp.unibo.it/casadio/LMBIOTEC/evalue) takes a less detailed approach, simply stating that the typical threshold for a good e−value from a BLAST search is e−5=(10−5) or lower.
+
+Meanwhile, [(Metagenomics.Wiki)](https://www.metagenomics.wiki/tools/blast/evalue) indicates the following about e-values: 
+- e-value = 1e-50: small e-value, low number of hits, but of high quality.  Blast hits with an E-value smaller than 1e-50  includes database matches of very high quality.
+-e-value = 1e-2: Blast hits with e-value smaller than 0.01 can still be considered as good hit for homology matches.
+-evalue = 10: large e-value, many hits, partly of low quality.  E-value smaller than 10 will include hits that cannot be considered as significant, but may give an idea of potential relations.
+
+I decided to use an **e-value of 1e-6**.  I figured that I could stand to be a little more aggressive than what the University of Bologna webpage suggested, but not as intense as what Qiagen Digital Insights was proposing counted as a "good" e-value and reasoned that choosing 1e-6 fell in line with what Metagenomics.Wiki was looking for.
+
+
 
 
 ## References
