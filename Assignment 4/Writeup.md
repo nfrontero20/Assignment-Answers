@@ -36,7 +36,7 @@ The other parameter I incorporated into the code was the **query coverage**.  Co
 
 I chose to follow the example set by Moreno-Hagelsieb et al. in their very helpful article titled ["Choosing BLAST options for better detection of orthologs as reciprocal best hits"](https://academic.oup.com/bioinformatics/article/24/3/319/252715) and **used a coverage of 50%** (meaning, coverage greater than 50%).
 
-## Bonus Question: 
+## Bonus Question 
 
 The bonus question asks us to "write a few sentences describing how you would continue to analyze the putative orthologues you just discovered, to prove that they really are orthologues".
 
@@ -46,5 +46,6 @@ Therefore, as an answer to the bonus question, I would say that I would perform 
 
 1. PorthoMCL: PorthoMCL is an orthology predictor.  After "all-against-all" and "individual-against-all" searches are performed in BLAST, the algorithm finds the RBH between the two genomes and calculates the normalized sccore.  Then, PorthoMCL finds the within genomes RBH and normalizes the score with the average score of all paralog pairs that have orthologs in other genomes.  Finally, the output is a sequence similarlity graph that the MCL program then cuts to predict orthologous and paralogous groups [(Tabari and Su, 2017)](https://bdataanalytics.biomedcentral.com/articles/10.1186/s41044-016-0019-8). 
 2. OrthAgogue: OrthAgogue is an algorithm that takes as input the best high-scoring pairs in BLAST output to then continue searching for orthologous groups.  The authors of "New Tools in Orthology Analysis" highlight that orthAgogue is particularly convenient when working on large amounts of data with computers of limited capabilities.  The paper with the original findings can be found [here](https://academic.oup.com/bioinformatics/article/30/5/734/245731). 
-3. 1. Hieranoid: This is a graph-based method that uses hierarchical approaches.  The benefits of this method include scalability and accuracy [("New Tools in Orthology Analysis: A Brief Review of Promising Perspectives")](https://www.frontiersin.org/articles/10.3389/fgene.2017.00165/full#h3).  The creators of the software write the following:
+3. Hieranoid: This is a graph-based method that uses hierarchical approaches.  The benefits of this method include scalability and accuracy [("New Tools in Orthology Analysis: A Brief Review of Promising Perspectives")](https://www.frontiersin.org/articles/10.3389/fgene.2017.00165/full#h3).  The creators of the software write the following:
+
 *"Hieranoid performs pairwise orthology analysis using InParanoid at each node in a guide tree as it progresses from its leaves to the root. This concept reduces the total runtime complexity from a quadratic to a linear function of the number of species. The tree hierarchy provides a natural structure in multi-species ortholog groups, and the aggregation of multiple sequences allows for multiple alignment similarity searching techniques, which can yield more accurate ortholog groups"* [(Schreiber, F., and Sonnhammer, E. L., 2013)](https://www.sciencedirect.com/science/article/pii/S0022283613001204).
