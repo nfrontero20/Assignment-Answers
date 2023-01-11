@@ -1,6 +1,4 @@
 # Assignment 4 Writeup
-Nicole Frontero
-
 ## Background
 
 **Orthologues** are genes that are found in different species that evolved from a common ancestral gene by speciation.  Often, orthologous genes retain the same function over the course of evolution [(Wikipedia)](https://en.wikipedia.org/wiki/Orthology).
