@@ -1,8 +1,7 @@
 # Assignment 4 Writeup
-## Nicole Frontero
+Nicole Frontero
 
-Discuss sensible BLAST parameters
-Bonus question
+## Background
 
 **Orthologues** are genes that are found in different species that evolved from a common ancestral gene by speciation.  Often, orthologous genes retain the same function over the course of evolution [(Wikipedia)](https://en.wikipedia.org/wiki/Orthology).
 
@@ -11,6 +10,8 @@ To discover orthologues, the first step is often a **"reciprocal best BLAST"**. 
 In this investigation, we use BioRuby to find orthologue pairs between **Arabidopsis** and **S. pombe**.  We needed to spcify two particular parameters: **e-value** and **coverage**.
 
 [()]()
+
+## Parameters
 
 The **e-value**, which stands for "expect value", measures the number of hits one can expect to see by chance when searching a database of a particular size [(NCBI)](https://blast.ncbi.nlm.nih.gov/Blast.cgi?CMD=Web&PAGE_TYPE=BlastDocs&DOC_TYPE=FAQ).  In this way, the e-value serves as a measure of significance and may remind you of the commonly heard of p-value.  Note that the e-value depends on the length of the database [(Ricardo Avila Bioinformatics Website)](https://ravilabio.info/notes/bioinformatics/e-value-bitscore.html).
 
@@ -36,3 +37,11 @@ I decided to use an **e-value of 1e-6**.  I figured that I could stand to be a l
 The other parameter I incorporated into the code was the **coverage**.  Coverage is the percentage of the query sequence length that is included in the alignment [Newell et al., 2013](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3867762/).  Oftentimes what can happen when running a BLAST search is that the sequences returned will only align with part of a queried sequence.  As a result, the greater the query coverage, the lower the e-value and the better the match [Newell et al., 2013](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3867762/). 
 
 We chose to follow the example set by Moreno-Hagelsieb et al. in their very helpful article titled ["Choosing BLAST options for better detection of orthologs as reciprocal best hits"](https://academic.oup.com/bioinformatics/article/24/3/319/252715) and **used a coverage of 50%**.
+
+## Bonus Question: 
+
+I did some research on orthology analysis and consulted an article titled [("New Tools in Orthology Analysis: A Brief Review of Promising Perspectives")](https://www.frontiersin.org/articles/10.3389/fgene.2017.00165/full#h3).  The authors highlighted the difficulty in detecting orthologous groups and stated that a "set of tools" rather than one specific analysis is required in order to best detect orthologues. To this end, they reviewed four specific tools and discuss their usefulness, which I will summarize here. 
+
+1. Hieranoid: This is a graph-based method that uses hierarchical approaches.  The benefits of this method include scalability and accuracy [Schreiber, F., and Sonnhammer, E. L. (2013)](https://www.sciencedirect.com/science/article/pii/S0022283613001204). 
+2. OrthoFinder: An algorithm developed to solve the bias accuracy in orthologous groups [Emms, D. M., and Kelly, S. (2015)](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-015-0721-2?ref=https://githubhelp.com).
+3. 
