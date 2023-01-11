@@ -33,9 +33,6 @@ Meanwhile, [(Metagenomics.Wiki)](https://www.metagenomics.wiki/tools/blast/evalu
 
 I decided to use an **e-value of 1e-6**.  I figured that I could stand to be a little more aggressive than what the University of Bologna webpage suggested, but not as intense as what Qiagen Digital Insights was proposing counted as a "good" e-value and reasoned that choosing 1e-6 fell in line with what Metagenomics.Wiki was looking for.
 
+The other parameter I incorporated into the code was the **coverage**.  Coverage is the percentage of the query sequence length that is included in the alignment [Newell et al., 2013](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3867762/).  Oftentimes what can happen when running a BLAST search is that the sequences returned will only align with part of a queried sequence.  As a result, the greater the query coverage, the lower the e-value and the better the match [Newell et al., 2013](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3867762/). 
 
-
-
-## References
-
-- 
+We chose to follow the example set by Moreno-Hagelsieb et al. in their very helpful article titled ["Choosing BLAST options for better detection of orthologs as reciprocal best hits"](https://academic.oup.com/bioinformatics/article/24/3/319/252715) and used a coverage of 50%.
