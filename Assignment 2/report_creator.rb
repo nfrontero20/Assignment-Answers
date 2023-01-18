@@ -14,9 +14,9 @@ def write_report(final_report, all_networks, gene_txt)
     f.puts("#{all_networks.length()} networks involving genes in our original list have been detected. \n ")
     f.puts("The depth of the analysis is chosen by the user. \n \n ")
     all_networks.each do |net|
-      f.puts "Genes from the original list which interact with each other (directly and/or indirectly) and form a network: #{net.genes_in_network.join(', ')} \n " # SHOWING THE GENES IN OUR ORIGINAL LIST THAT WILL INTERACT WITH EACH OTHER (FORMING NETWORKS)
+      f.puts "Genes from the original list which interact with each other (directly and/or indirectly) and form a network: #{net.genes_in_network.join(', ')} \n " # Showing the genes in our original list that will interact with each other and form networks
       f.puts "Complete network, including both the genes in the list (above) and other interactions with genes outside the list: \n "
-      net.network.each do |key, value| # SHOWING FULL NETWORKS, WHICH WILL CONTAIN BOTH THE ORIGINAL GENES IN OUR LIST, AS WELL AS THOSE THAT ARE OUTSIDE THE LIST
+      net.network.each do |key, value| # Showing the full networks, which will contain both the original genes in our list as well as those that are outside the list
           f.puts "#{key} has the following connections: #{value.join(', ')}" 
       end
       
@@ -40,9 +40,9 @@ def write_report(final_report, all_networks, gene_txt)
         f.puts("\nNo terms have been found in Gene Ontology for the genes in this network.")
       end
       
-      f.puts "" # Printing an space between each Network found, to better visualize it in the terminal
+      f.puts "" # Printing a space between each network found to better visualize it in the terminal
       f.puts '_______________________________________________________________________________________________________'
-      f.puts "" # Printing an space between each Network found, to better visualize it in the terminal
+      f.puts "" # Printing a space between each network found to better visualize it in the terminal
         
     end
     
