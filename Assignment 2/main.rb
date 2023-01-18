@@ -31,9 +31,9 @@ end
 
 nets = new_net.all_networks()
 nets.each do |net|
-  puts net.genes_in_network # SHOWING THE GENES IN OUR ORIGINAL LIST THAT WILL INTERACT WITH EACH OTHER (FORMING NETWORKS)
-  puts net.network  # SHOWING FULL NETWORKS, WHICH WILL CONTAIN BOTH THE ORIGINAL GENES IN OUR LIST, AS WELL AS THOSE THAT ARE OUTSIDE THE LIST
-  puts '' # Printing an space between each Network found, to better visualize it in the terminal
+  puts net.genes_in_network # Showing the genes in our original list that will interact with each other and form networks
+  puts net.network  # Showing the full networks, which contain both the original genes in our list and also those that are outside the list
+  puts '' # Printing a space between each Network found, to better visualize it in the terminal
 end
 
 write_report(final_report, nets, genes_list_names)
