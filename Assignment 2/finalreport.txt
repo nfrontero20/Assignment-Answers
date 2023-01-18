@@ -1,6 +1,4 @@
-|*************************************************************************|
-|Report file of possible interactions between predicted co-expressed genes|
-|*************************************************************************|
+Report file of possible interactions between predicted co-expressed genes:
 
 Number of genes analysed (from the original txt): 168. 
  
